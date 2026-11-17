@@ -1,0 +1,345 @@
+/* Variables de color clínico */
+:root {
+    --primary: #0284c7;
+    --primary-dark: #0369a1;
+    --secondary: #0f766e;
+    --bg-light: #f0f9ff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --border: #cbd5e1;
+    --error-bg: #fee2e2;
+    --error-text: #b91c1c;
+    --success-bg: #dcfce7;
+    --success-text: #15803d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Encabezado y Navegación */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav h1 {
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+.btn-nav {
+    background-color: var(--primary);
+    color: var(--white) !important;
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+}
+
+.btn-nav:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Contenedor Principal */
+main {
+    flex: 1;
+    max-width: 1150px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Banner de Bienvenida */
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Barra de Búsqueda y Filtros */
+.barra-filtros {
+    background-color: var(--white);
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.barra-filtros form {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr auto auto;
+    gap: 0.8rem;
+}
+
+.barra-filtros input,
+.barra-filtros select {
+    padding: 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.btn-limpiar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    background-color: #e2e8f0;
+    color: var(--text-dark);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+/* Grilla de Servicios Odontológicos */
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.tarjeta-servicio {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 4px solid var(--primary);
+}
+
+.badge-categoria {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: var(--primary-dark);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+    width: fit-content;
+}
+
+.tarjeta-servicio h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-servicio p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.detalles-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.8rem;
+    border-top: 1px solid #f1f5f9;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.precio {
+    color: var(--secondary);
+    font-size: 1.2rem;
+}
+
+/* Botones Generales */
+button,
+.btn-primario {
+    display: inline-block;
+    text-align: center;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+button:hover,
+.btn-primario:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Formularios (Login, Registro, Reservas) */
+.contenedor-formulario {
+    max-width: 480px;
+    margin: 1rem auto;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contenedor-formulario h2 {
+    margin-bottom: 1.2rem;
+    color: var(--primary-dark);
+    text-align: center;
+}
+
+.contenedor-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.contenedor-formulario label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.contenedor-formulario input,
+.contenedor-formulario select,
+.contenedor-formulario textarea {
+    padding: 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* Alertas */
+.alerta-error {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    padding: 0.85rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--error-text);
+}
+
+.alerta-error ul {
+    margin-left: 1.2rem;
+}
+
+.alerta-exito {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    padding: 0.85rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--success-text);
+}
+
+/* Paginación */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+}
+
+.paginacion a {
+    padding: 0.5rem 0.9rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.paginacion a.activa {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+/* Tablas (Mis Reservas y Panel Admin) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Pie de página */
+footer {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 1.2rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .barra-filtros form {
+        grid-template-columns: 1fr;
+    }
+}
