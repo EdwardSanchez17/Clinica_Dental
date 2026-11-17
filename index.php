@@ -23,7 +23,7 @@ if ($busqueda !== '') {
     $parametros[] = "%{$busqueda}%";
     $parametros[] = "%{$busqueda}%";
 }
-
+  
 if ($categoria_id > 0) {
     $condiciones[] = "s.id_categoria = ?";
     $parametros[] = $categoria_id;
